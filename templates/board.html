@@ -1,0 +1,12 @@
+{% for row in range(3) %}
+    {% for column in range(3) %}
+        {% set cell = row+column+(row*2) %}
+        <button class="cell" hx-get="/move/{{ cell }}" hx-swap="outerHTML">
+            {{ game.board[cell] }}
+        </button>
+    {% endfor %}
+    <br>
+{% endfor %}
+<p hx-trigger="click from:.cell delay:10ms" hx-get="/status">
+    {{ status() }}
+</p>

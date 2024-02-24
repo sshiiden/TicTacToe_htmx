@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTMX Hello World</title>
+	<script src="./static/js/htmx.min.js"></script>
+	<link rel="stylesheet" href="./static/css/center_body.css">
+	<link rel="stylesheet" href="./static/css/main.css">
+</head>
+
+<body>
+	<section id="board">
+		{% include "board.html" %}
+	</section>
+	<button id="newgame" hx-get="/new_game" hx-target="#board">New game</button>
+</body>
+
+</html>
